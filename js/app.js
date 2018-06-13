@@ -39,7 +39,7 @@ var Player = function() {
     this.y = 404;
     this.score = 0;
     //display player image
-    this.sprite = 'char-horn-girl.png';
+    this.sprite = 'images/char-boy.png';
 }
 
 
