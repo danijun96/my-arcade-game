@@ -106,6 +106,7 @@ for (var addEnemies = 0; addEnemies < 4; addEnemies++) {
     allEnemies.push(enemy);
     if(this.score >= 10 <= 15){
         addEnemies++;
+        this.speed = (Math.random() * 250) + 95;
     }
 };
 
