@@ -101,12 +101,12 @@ Player.prototype.handleInput = function(key) {
 //Create array that holds all of the enemies
 var allEnemies = [];
 
-for (var addEnemies = 0; addEnemies < 20; addEnemies++) {
+for (var addEnemies = 0; addEnemies < 6; addEnemies++) {
     var enemy = new Enemy();
     allEnemies.push(enemy);
     if(this.score > 10 <  15){
         addEnemies++;
-        this.speed = (Math.random() * 950) + 595;
+        this.speed = (Math.random() * 550) + 295;
     }
 };
 
