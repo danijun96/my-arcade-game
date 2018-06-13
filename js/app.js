@@ -104,7 +104,7 @@ var allEnemies = [];
 for (var addEnemies = 0; addEnemies < 4; addEnemies++) {
     var enemy = new Enemy();
     allEnemies.push(enemy);
-    if(score >= 10 <= 15){
+    if(this.score >= 10 <= 15){
         addEnemies++;
     }
 };
