@@ -39,7 +39,7 @@ var Player = function() {
     this.y = 404;
     this.score = 0;
     //display player image
-    this.sprite = 'images/char-cat-girl.png';
+    this.sprite = 'char-horn-girl.png';
 }
 
 
@@ -101,10 +101,10 @@ Player.prototype.handleInput = function(key) {
 //Create array that holds all of the enemies
 var allEnemies = [];
 
-for (var addEnemies = 0; addEnemies < 4; addEnemies++) {
+for (var addEnemies = 0; addEnemies < 6; addEnemies++) {
     var enemy = new Enemy();
     allEnemies.push(enemy);
-    if(this.score >= 10 <= 15){
+    if(this.score > 10 <  15){
         addEnemies++;
         this.speed = (Math.random() * 550) + 295;
     }
