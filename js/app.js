@@ -52,6 +52,7 @@ class Enemy {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+
 var Player = function() {
     this.x = 202;
     this.y = 404;
@@ -60,13 +61,20 @@ var Player = function() {
     this.sprite = 'images/char-cat-girl.png';
 }
 
+class Player {
 
-// checks if the player collides an enemy and resets player position 
-Player.prototype.update = function() {
-    this.checkCollision();
+
 }
 
-Player.prototype.checkCollision = function() {
+class Player {
+       constructor() {
+    this.x = 202;
+    this.y = 404;
+    this.score = 0;
+    //display player image
+    this.sprite = 'images/char-cat-girl.png';
+    }
+    checkCollision(){
     for (var i in allEnemies) {
         if (this.x < allEnemies[i].x + 80 &&
             this.x + 65 > allEnemies[i].x + 2 &&
@@ -92,17 +100,18 @@ Player.prototype.checkCollision = function() {
     ctx.fillStyle = '#0059b3';
     ctx.font = '28px Helvetica';
     ctx.fillText("Score: " + this.score, 202, 40);
-}
+        }
+    }
 
+    update() {
+        this.checkCollision();
+    }
 
-// Draw the player on the screen, required method for game
-Player.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    render(){
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
 
-}
-
-//Create function that allows to player to move on the screen
-Player.prototype.handleInput = function(key) {
+    handleInput() {
     if (key == 'left' && this.x - 101 >= 0)
         this.x -= 101;
     if (key == 'right' && this.x + 101 < 505)
@@ -110,7 +119,65 @@ Player.prototype.handleInput = function(key) {
     if (key == 'up' && this.y - 83 >= -11)
         this.y -= 83;
     if (key == 'down' && this.y + 83 < 487)
-        this.y += 83;
+        this.y += 83;   
+    }
+
+
+
+
+}
+
+
+// checks if the player collides an enemy and resets player position 
+// Player.prototype.update = function() {
+//     this.checkCollision();
+// }
+
+// Player.prototype.checkCollision = function() {
+//     for (var i in allEnemies) {
+//         if (this.x < allEnemies[i].x + 80 &&
+//             this.x + 65 > allEnemies[i].x + 2 &&
+//             this.y + 135 > allEnemies[i].y + 140 &&
+//             this.y + 65 < allEnemies[i].y + 75) {
+//             this.score = 0;
+//             this.x = 202;
+//             this.y = 404;
+//             console.log('Start again!');
+//         }
+//     }
+
+//     if (this.y <= 0) {
+//         this.score += 1;
+//         this.x = 202;
+//         this.y = 404;
+//         console.log('You Win!');
+//     }
+
+//     // Display Score
+//     // ctx.fillRect(0, 0, 300, 150);
+//     ctx.clearRect(10, 10, 350, 50);
+//     ctx.fillStyle = '#0059b3';
+//     ctx.font = '28px Helvetica';
+//     ctx.fillText("Score: " + this.score, 202, 40);
+// }
+
+
+// Draw the player on the screen, required method for game
+// Player.prototype.render = function() {
+//     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+
+// }
+
+//Create function that allows to player to move on the screen
+// Player.prototype.handleInput = function(key) {
+//     if (key == 'left' && this.x - 101 >= 0)
+//         this.x -= 101;
+//     if (key == 'right' && this.x + 101 < 505)
+//         this.x += 101;
+//     if (key == 'up' && this.y - 83 >= -11)
+//         this.y -= 83;
+//     if (key == 'down' && this.y + 83 < 487)
+//         this.y += 83;
 }
 
 // Now instantiate your objects.
@@ -119,7 +186,7 @@ Player.prototype.handleInput = function(key) {
 //Create array that holds all of the enemies
 var allEnemies = [];
 
-for (var addEnemies = 0; addEnemies < 4; addEnemies++) {
+for (var addEnemies = 0; addEnemies < 6; addEnemies++) {
     var enemy = new Enemy();
     allEnemies.push(enemy);
 };
