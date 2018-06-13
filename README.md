@@ -12,7 +12,7 @@ This is a simple game where the player should reach the water and gain a point, 
 
 ## Installation
 
-1. Clone this repository: https://github.com/cristalnaya/frontend-nanodegree-arcade-game
+1. Clone this repository: https://github.com/danijun96/my-arcade-game
 2. Then just open index.html in browser and play 🎮.
 
 ## Tools used: 
